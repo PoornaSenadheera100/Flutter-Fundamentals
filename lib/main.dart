@@ -15,7 +15,13 @@ class MyApp extends StatelessWidget {
           title: const Text("Flutter Fundamentals"),
         ),
         body: const Center(
-          child: Text("Hello World"),
+          child: Text(
+            "Hello World",
+            style: TextStyle(
+              fontSize: 20.0,
+              color: Colors.deepOrange,
+            ),
+          ),
         ),
       ),
     );
