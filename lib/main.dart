@@ -4,8 +4,6 @@ main(){
   runApp(MyApp());
 }
 
-// Test
-
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
