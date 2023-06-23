@@ -39,11 +39,49 @@ class MyApp extends StatelessWidget {
                   Icon(Icons.train_rounded),
                   Icon(Icons.airplanemode_active),
                 ],
+                indicatorSize: TabBarIndicatorSize.tab,
+                indicatorWeight: 4.0,
+                indicatorColor: Colors.limeAccent,
               ),
             ),
           ),
+          body:  TabBarView(children: [
+            tab01(),
+            tab02(),
+            tab03(),
+          ]),
         ),
       ),
+    );
+  }
+
+  Widget tab01() {
+    return const Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text("Tab 01"),
+      ],
+    );
+  }
+
+  Widget tab02() {
+    return const Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text("Tab 02"),
+      ],
+    );
+  }
+
+  Widget tab03() {
+    return const Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text("Tab 03"),
+      ],
     );
   }
 }
