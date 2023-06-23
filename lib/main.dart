@@ -9,20 +9,39 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Flutter Fundamentals"),
-        ),
-        body: const Center(
-          child: Text(
-            "Hello World",
-            style: TextStyle(
-              fontSize: 20.0,
-              color: Colors.deepOrange,
-            ),
+    return const MaterialApp(
+      title: 'Flutter Demo',
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
+        title: const Text("Flutter Fundamentals"),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.search),
           ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.more_vert),
+          ),
+        ],
+        flexibleSpace: Image.asset(
+          "assets/back.jpg",
+          fit: BoxFit.fill,
         ),
+      ),
+      body: const Center(
+        child: Text("Hello World"),
       ),
     );
   }
