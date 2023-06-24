@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          brightness: Brightness.dark,
+          brightness: Brightness.light,
+          // replace "dark" with "light" to apply dark theme
           primarySwatch: Colors.deepOrange,
         ),
         home: Scaffold(
@@ -20,8 +21,19 @@ class MyApp extends StatelessWidget {
             title: const Text("Container"),
           ),
           body: Container(
+            transform: Matrix4.rotationZ(0.3),
             color: Colors.indigo,
-            child: const Text("Hello World"),
+            width: double.infinity,
+            height: 200.0,
+            alignment: Alignment.centerRight,
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20.0,
+            ),
+            margin: const EdgeInsets.all(20.0),
+            child: const Text(
+              "Hello World",
+              style: TextStyle(fontSize: 20.0),
+            ),
           ),
         ));
   }
