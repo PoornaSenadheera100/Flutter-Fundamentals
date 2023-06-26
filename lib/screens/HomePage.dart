@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fundamentals/screens/SecondScreen.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -7,9 +8,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Navigation App"),
+        title: const Text("Navigation App"),
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -19,8 +20,10 @@ class HomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.arrow_right_outlined),
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SecondScreen("This is the gift from HomePage")));
+        },
+        child: const Icon(Icons.arrow_right_outlined),
       ),
     );
   }
