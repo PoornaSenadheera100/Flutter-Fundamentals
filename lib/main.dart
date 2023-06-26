@@ -9,87 +9,54 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
+      title: "Stateful Widget App",
+      home: HomePage(),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Rows and Columns"),
-        ),
-        body: const Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int count = 0;
+
+  void increment(){
+    setState(() {
+      count++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Stateful Widget App"),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Text 1"),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("Text 1"),
-                Text("Text 2"),
-              ],
+            const Text(
+              "You have pushed button times",
+              style: TextStyle(fontSize: 20.0),
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("Text 1"),
-                Text("Text 2"),
-                Text("Text 3"),
-              ],
+            Text(
+              "$count",
+              style: const TextStyle(fontSize: 20.0),
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("Text 1"),
-                Text("Text 2"),
-                Text("Text 3"),
-                Text("Text 4"),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("Text 1"),
-                Text("Text 2"),
-                Text("Text 3"),
-                Text("Text 4"),
-                Text("Text 5"),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("Text 1"),
-                Text("Text 2"),
-                Text("Text 3"),
-                Text("Text 4"),
-                Text("Text 5"),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("Text 1"),
-                Text("Text 2"),
-                Text("Text 3"),
-                Text("Text 4"),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("Text 1"),
-                Text("Text 2"),
-                Text("Text 3"),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("Text 1"),
-                Text("Text 2"),
-              ],
-            ),
-            Text("Text 1"),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: increment,
+        child: Icon(Icons.add),
       ),
     );
   }
