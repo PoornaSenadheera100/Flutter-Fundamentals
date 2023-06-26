@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("List View App"),
+          title: const Text("List View App"),
         ),
-        body: Container(
+        body: SizedBox(
           height: 100.0,
           child: ListView(
             scrollDirection: Axis.horizontal,
@@ -45,7 +45,6 @@ class MyApp extends StatelessWidget {
                 height: 100.0,
                 color: Colors.deepOrange,
               ),
-
             ],
           ),
         ),
