@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fundamentals/screens/HomePage.dart';
 
+// ignore: must_be_immutable
 class SecondScreen extends StatelessWidget {
   String gift;
 
@@ -11,9 +12,9 @@ class SecondScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.home),
+          icon: const Icon(Icons.home),
           onPressed: () {
-            Navigator.of(context).pop(HomePage());
+            Navigator.of(context).pop(const HomePage());
           },
         ),
         title: const Text("Second Screen"),
