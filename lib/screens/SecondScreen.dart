@@ -1,16 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fundamentals/screens/HomePage.dart';
 
 class SecondScreen extends StatelessWidget {
-  const SecondScreen({super.key});
+  String gift;
+
+  SecondScreen(this.gift, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second Screen"),
+        leading: IconButton(
+          icon: Icon(Icons.home),
+          onPressed: () {
+            Navigator.of(context).pop(HomePage());
+          },
+        ),
+        title: const Text("Second Screen"),
       ),
       body: Center(
-        child: Text("This is the second screen"),
+        child: Text(gift),
       ),
     );
   }
