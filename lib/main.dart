@@ -15,82 +15,39 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("List View App"),
         ),
-        body: ListView(
-          scrollDirection: Axis.vertical,
-          children: [
-            ListTile(
-              title: Text("Title 1"),
-              subtitle: Text("Subtitle 1"),
-              leading: Icon(Icons.home),
-              trailing: Icon(Icons.menu),
-            ),
-            ListTile(
-              title: Text("Title 1"),
-              subtitle: Text("Subtitle 1"),
-              leading: Icon(Icons.home),
-              trailing: Icon(Icons.menu),
-            ),
-            ListTile(
-              title: Text("Title 1"),
-              subtitle: Text("Subtitle 1"),
-              leading: Icon(Icons.home),
-              trailing: Icon(Icons.menu),
-            ),
-            ListTile(
-              title: Text("Title 1"),
-              subtitle: Text("Subtitle 1"),
-              leading: Icon(Icons.home),
-              trailing: Icon(Icons.menu),
-            ),
-            ListTile(
-              title: Text("Title 1"),
-              subtitle: Text("Subtitle 1"),
-              leading: Icon(Icons.home),
-              trailing: Icon(Icons.menu),
-            ),
-            ListTile(
-              title: Text("Title 1"),
-              subtitle: Text("Subtitle 1"),
-              leading: Icon(Icons.home),
-              trailing: Icon(Icons.menu),
-            ),
-            ListTile(
-              title: Text("Title 1"),
-              subtitle: Text("Subtitle 1"),
-              leading: Icon(Icons.home),
-              trailing: Icon(Icons.menu),
-            ),
-            ListTile(
-              title: Text("Title 1"),
-              subtitle: Text("Subtitle 1"),
-              leading: Icon(Icons.home),
-              trailing: Icon(Icons.menu),
-            ),
-            ListTile(
-              title: Text("Title 1"),
-              subtitle: Text("Subtitle 1"),
-              leading: Icon(Icons.home),
-              trailing: Icon(Icons.menu),
-            ),
-            ListTile(
-              title: Text("Title 1"),
-              subtitle: Text("Subtitle 1"),
-              leading: Icon(Icons.home),
-              trailing: Icon(Icons.menu),
-            ),
-            ListTile(
-              title: Text("Title 1"),
-              subtitle: Text("Subtitle 1"),
-              leading: Icon(Icons.home),
-              trailing: Icon(Icons.menu),
-            ),
-            ListTile(
-              title: Text("Title 1"),
-              subtitle: Text("Subtitle 1"),
-              leading: Icon(Icons.home),
-              trailing: Icon(Icons.menu),
-            ),
-          ],
+        body: Container(
+          height: 100.0,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: [
+              Container(
+                width: 100.0,
+                height: 100.0,
+                color: Colors.deepOrange,
+              ),
+              Container(
+                width: 100.0,
+                height: 100.0,
+                color: Colors.blue,
+              ),
+              Container(
+                width: 100.0,
+                height: 100.0,
+                color: Colors.deepOrange,
+              ),
+              Container(
+                width: 100.0,
+                height: 100.0,
+                color: Colors.blue,
+              ),
+              Container(
+                width: 100.0,
+                height: 100.0,
+                color: Colors.deepOrange,
+              ),
+
+            ],
+          ),
         ),
       ),
     );
