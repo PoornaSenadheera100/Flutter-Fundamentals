@@ -13,16 +13,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("List Builder App"),
+          title: const Text("List Builder App"),
         ),
         body: ListView.builder(
             itemCount: items.length,
             itemBuilder: (context, index) {
               return ListTile(
-                leading: Icon(Icons.task_alt),
+                leading: const Icon(Icons.task_alt),
                 title: Text(items[index]),
-                subtitle: Text("By Test"),
-                trailing: Icon(Icons.add_box),
+                subtitle: const Text("By Test"),
+                trailing: const Icon(Icons.add_box),
                 onTap: (){},
               );
             }),
