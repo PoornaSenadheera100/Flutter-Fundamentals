@@ -39,7 +39,7 @@ class MenuScreen extends StatelessWidget {
               "Welcome to My App",
               style: TextStyle(fontSize: 20.0),
             ),
-            ElevatedButton(onPressed: () {}, child: Text("ON")),
+            ElevatedButton(onPressed: () {}, child: Text("Custom AppBar")),
           ],
         ),
       ),
