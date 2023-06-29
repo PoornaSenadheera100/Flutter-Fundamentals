@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fundamentals/screens/custom_app_bar.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
 
+  void onTapCustomAppBarBtn(BuildContext context){
+    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>const CustomAppBar()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey,
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
         leading: const Icon(
@@ -35,17 +41,93 @@ class MenuScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              "Welcome to My App",
-              style: TextStyle(fontSize: 20.0),
+            const Padding(
+              padding: EdgeInsets.only(bottom: 20.0),
+              child: Text(
+                "Welcome to My App",
+                style: TextStyle(fontSize: 20.0),
+              ),
             ),
-            ElevatedButton(onPressed: () {}, child: Text("Custom AppBar"), style: ButtonStyle(minimumSize: MaterialStateProperty.resolveWith((states) => Size(150.0, 40.0))),),
-            ElevatedButton(onPressed: () {}, child: Text("TabBar"), style: ButtonStyle(minimumSize: MaterialStateProperty.resolveWith((states) => Size(150.0, 40.0))),),
-            ElevatedButton(onPressed: () {}, child: Text("Columns & Rows"), style: ButtonStyle(minimumSize: MaterialStateProperty.resolveWith((states) => Size(150.0, 40.0))),),
-            ElevatedButton(onPressed: () {}, child: Text("Stateful Widgets"), style: ButtonStyle(minimumSize: MaterialStateProperty.resolveWith((states) => Size(150.0, 40.0))),),
-            ElevatedButton(onPressed: () {}, child: Text("List View"), style: ButtonStyle(minimumSize: MaterialStateProperty.resolveWith((states) => Size(150.0, 40.0))),),
-            ElevatedButton(onPressed: () {}, child: Text("List Builder"), style: ButtonStyle(minimumSize: MaterialStateProperty.resolveWith((states) => Size(150.0, 40.0))),),
-            ElevatedButton(onPressed: () {}, child: Text("Flutter Forms"), style: ButtonStyle(minimumSize: MaterialStateProperty.resolveWith((states) => Size(150.0, 40.0))),),
+            ElevatedButton(
+              onPressed: () {
+                onTapCustomAppBarBtn(context);
+              },
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.resolveWith(
+                    (states) => const Size(150.0, 40.0)),
+              ),
+              child: const Text("Custom AppBar"),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.resolveWith(
+                    (states) => const Size(150.0, 40.0)),
+                backgroundColor: MaterialStateProperty.resolveWith(
+                    (states) => Colors.deepOrange),
+              ),
+              child: const Text("TabBar"),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.resolveWith(
+                    (states) => const Size(150.0, 40.0)),
+                backgroundColor: MaterialStateProperty.resolveWith(
+                    (states) => Colors.amber),
+              ),
+              child: const Text("Columns & Rows"),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.resolveWith(
+                    (states) => const Size(150.0, 40.0)),
+                backgroundColor: MaterialStateProperty.resolveWith(
+                    (states) => Colors.deepPurple),
+              ),
+              child: const Text("Stateful Widgets"),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.resolveWith(
+                    (states) => const Size(150.0, 40.0)),
+                backgroundColor: MaterialStateProperty.resolveWith(
+                    (states) => Colors.green),
+              ),
+              child: const Text("List View"),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.resolveWith(
+                    (states) => const Size(150.0, 40.0)),
+                backgroundColor: MaterialStateProperty.resolveWith(
+                    (states) => Colors.purple),
+              ),
+              child: const Text("List Builder"),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.resolveWith(
+                    (states) => const Size(150.0, 40.0)),
+                backgroundColor: MaterialStateProperty.resolveWith(
+                    (states) => Colors.yellowAccent),
+              ),
+              child: const Text("Flutter Forms", style: TextStyle(color: Colors.black),),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.resolveWith(
+                        (states) => const Size(150.0, 40.0)),
+                backgroundColor: MaterialStateProperty.resolveWith(
+                        (states) => Colors.pinkAccent),
+              ),
+              child: const Text("Asynchronous App"),
+            ),
           ],
         ),
       ),
