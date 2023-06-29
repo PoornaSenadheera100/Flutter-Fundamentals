@@ -82,7 +82,7 @@ class MenuScreen extends StatelessWidget {
                 backgroundColor: MaterialStateProperty.resolveWith(
                     (states) => Colors.amber),
               ),
-              child: const Text("Columns & Rows"),
+              child: const Text("Columns & Rows", style: TextStyle(color: Colors.black),),
             ),
             ElevatedButton(
               onPressed: () {},
