@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fundamentals/classes/Person.dart';
 
 class SecondScreen extends StatefulWidget {
   const SecondScreen({super.key});
@@ -14,16 +15,21 @@ class _SecondScreenState extends State<SecondScreen> {
   @override
   void initState() {
     super.initState();
-    getData();
+    setData();
   }
 
-  void getData() {
-    String data;
-   Future.delayed(const Duration(seconds: 5), (){
-     setState(() {
-       nameController.text = "Poorna Senadheera";
-       ageController.text = '22';
-     });
+  Future<Person> getData() async {
+   Person person = await Future.delayed(const Duration(seconds: 5), (){
+     return Person("Poorna Senaadheera", 22);
+    });
+   return person;
+  }
+
+  Future<void> setData() async{
+    Person person = await getData();
+    setState(() {
+      nameController.text = person.name;
+      ageController.text = person.age.toString();
     });
   }
 
