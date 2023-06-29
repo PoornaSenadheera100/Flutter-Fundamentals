@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fundamentals/screens/custom_app_bar.dart';
+import 'package:flutter_fundamentals/screens/custom_app_bar_screen.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
 
   void onTapCustomAppBarBtn(BuildContext context){
-    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>const CustomAppBar()));
+    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>const CustomAppBarScreen()));
   }
 
   @override

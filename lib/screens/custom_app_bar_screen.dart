@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+class CustomAppBarScreen extends StatelessWidget {
+  const CustomAppBarScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +9,7 @@ class CustomAppBar extends StatelessWidget {
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.pink),
         leading: IconButton(onPressed: (){
-          Navigator.of(context).pop(CustomAppBar());
+          Navigator.of(context).pop(CustomAppBarScreen());
         }, icon: Icon(Icons.arrow_back_sharp),),
         title: Text(
           "Custom App Bar",
