@@ -5,23 +5,23 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   void navigation(BuildContext context){
-    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>SecondScreen()));
+    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>const SecondScreen()));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Asynchronous App"),
+        title: const Text("Asynchronous App"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text("Welcome to Async App", style: TextStyle(fontSize: 20.0),),
+            const Text("Welcome to Async App", style: TextStyle(fontSize: 20.0),),
             ElevatedButton(onPressed: (){
               navigation(context);
-            }, child: Text("My Profile"))
+            }, child: const Text("My Profile"))
           ],
         ),
       ),
