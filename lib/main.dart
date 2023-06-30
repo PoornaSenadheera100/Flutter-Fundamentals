@@ -17,9 +17,25 @@ class _MyAppState extends State<MyApp> {
   final StreamController _controller = StreamController();
   int _count = 0;
 
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _controller.close();
+  }
+
   void startCounter() async {
     while (true) {
       _controller.sink.add(_count);
+      await Future.delayed(const Duration(seconds: 1), () {
+        _count++;
+      });
+    }
+  }
+
+  Stream<int> startCounter2() async* {
+    while (true) {
+      yield(_count);
       await Future.delayed(const Duration(seconds: 1), () {
         _count++;
       });
@@ -36,7 +52,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Center(
           child: StreamBuilder(
-              stream: _controller.stream,
+              stream: startCounter2().where((event) => event.isEven), // for method 1 -->   _controller.stream,
               builder: (context, snapshot) {
                 if (snapshot.hasError) {
                   return const Text("Error");
