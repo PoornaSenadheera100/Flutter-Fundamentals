@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fundamentals/screens/columns_rows_screen.dart';
 import 'package:flutter_fundamentals/screens/custom_app_bar_screen.dart';
+import 'package:flutter_fundamentals/screens/stateful_widgets_screen.dart';
 import 'package:flutter_fundamentals/screens/tab_bar_screen.dart';
 
 class MenuScreen extends StatelessWidget {
@@ -85,7 +86,9 @@ class MenuScreen extends StatelessWidget {
               child: const Text("Columns & Rows", style: TextStyle(color: Colors.black),),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>const StatefulWidgetScreen()));
+              },
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
                     (states) => const Size(184.0, 40.0)),
