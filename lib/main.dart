@@ -1,7 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -12,32 +14,56 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  final StreamController _controller = StreamController();
+  int _count = 0;
+
+  void startCounter() async {
+    while (true) {
+      _controller.sink.add(_count);
+      await Future.delayed(const Duration(seconds: 1), () {
+        _count++;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Stream & Stream Builder"),
+          title: const Text("Stream & Stream Builder"),
         ),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Counter",
-                style: TextStyle(fontSize: 20.0),
-              ),
-              Text(
-                "0",
-                style: TextStyle(fontSize: 40.0),
-              ),
-            ],
-          ),
+          child: StreamBuilder(
+              stream: _controller.stream,
+              builder: (context, snapshot) {
+                if (snapshot.hasError) {
+                  return const Text("Error");
+                } else if (snapshot.connectionState ==
+                    ConnectionState.waiting) {
+                  return const CircularProgressIndicator.adaptive();
+                }
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Counter",
+                      style: TextStyle(fontSize: 20.0),
+                    ),
+                    Text(
+                      "${snapshot.data}",
+                      style: const TextStyle(fontSize: 40.0),
+                    ),
+                  ],
+                );
+              }),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(Icons.play_arrow),
+          onPressed: () {
+            startCounter();
+          },
+          child: const Icon(Icons.play_arrow),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
