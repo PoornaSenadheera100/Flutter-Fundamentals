@@ -56,7 +56,7 @@ class MenuScreen extends StatelessWidget {
               },
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
-                    (states) => const Size(150.0, 40.0)),
+                    (states) => const Size(184.0, 40.0)),
               ),
               child: const Text("Custom AppBar"),
             ),
@@ -66,7 +66,7 @@ class MenuScreen extends StatelessWidget {
               },
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
-                    (states) => const Size(150.0, 40.0)),
+                    (states) => const Size(184.0, 40.0)),
                 backgroundColor: MaterialStateProperty.resolveWith(
                     (states) => Colors.deepOrange),
               ),
@@ -78,7 +78,7 @@ class MenuScreen extends StatelessWidget {
               },
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
-                    (states) => const Size(150.0, 40.0)),
+                    (states) => const Size(184.0, 40.0)),
                 backgroundColor: MaterialStateProperty.resolveWith(
                     (states) => Colors.amber),
               ),
@@ -88,7 +88,7 @@ class MenuScreen extends StatelessWidget {
               onPressed: () {},
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
-                    (states) => const Size(150.0, 40.0)),
+                    (states) => const Size(184.0, 40.0)),
                 backgroundColor: MaterialStateProperty.resolveWith(
                     (states) => Colors.deepPurple),
               ),
@@ -98,7 +98,7 @@ class MenuScreen extends StatelessWidget {
               onPressed: () {},
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
-                    (states) => const Size(150.0, 40.0)),
+                    (states) => const Size(184.0, 40.0)),
                 backgroundColor: MaterialStateProperty.resolveWith(
                     (states) => Colors.green),
               ),
@@ -108,7 +108,7 @@ class MenuScreen extends StatelessWidget {
               onPressed: () {},
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
-                    (states) => const Size(150.0, 40.0)),
+                    (states) => const Size(184.0, 40.0)),
                 backgroundColor: MaterialStateProperty.resolveWith(
                     (states) => Colors.purple),
               ),
@@ -118,7 +118,7 @@ class MenuScreen extends StatelessWidget {
               onPressed: () {},
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
-                    (states) => const Size(150.0, 40.0)),
+                    (states) => const Size(184.0, 40.0)),
                 backgroundColor: MaterialStateProperty.resolveWith(
                     (states) => Colors.yellowAccent),
               ),
@@ -128,11 +128,21 @@ class MenuScreen extends StatelessWidget {
               onPressed: () {},
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
-                        (states) => const Size(150.0, 40.0)),
+                        (states) => const Size(184.0, 40.0)),
                 backgroundColor: MaterialStateProperty.resolveWith(
                         (states) => Colors.pinkAccent),
               ),
               child: const Text("Asynchronous App"),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.resolveWith(
+                        (states) => const Size(184.0, 40.0)),
+                backgroundColor: MaterialStateProperty.resolveWith(
+                        (states) => Colors.lightBlueAccent),
+              ),
+              child: const Text("Stream & StreamBuilder", style: TextStyle(color: Colors.black),),
             ),
           ],
         ),
