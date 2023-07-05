@@ -153,6 +153,16 @@ class MenuScreen extends StatelessWidget {
               ),
               child: const Text("Stream & StreamBuilder", style: TextStyle(color: Colors.black),),
             ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.resolveWith(
+                        (states) => const Size(184.0, 40.0)),
+                backgroundColor: MaterialStateProperty.resolveWith(
+                        (states) => Colors.deepOrangeAccent),
+              ),
+              child: const Text("Future Builder"),
+            ),
           ],
         ),
       ),
