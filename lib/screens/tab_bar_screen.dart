@@ -3,19 +3,19 @@ import 'package:flutter/material.dart';
 class TabBarScreen extends StatelessWidget {
   const TabBarScreen({super.key});
 
-  Widget fstTab(){
+  Widget fstTab() {
     return const Center(
       child: Text("Travel by Car"),
     );
   }
 
-  Widget scndTab(){
+  Widget scndTab() {
     return const Center(
       child: Text("Travel by Bus"),
     );
   }
 
-  Widget thrdTab(){
+  Widget thrdTab() {
     return const Center(
       child: Text("Travel on Foot"),
     );
@@ -35,6 +35,8 @@ class TabBarScreen extends StatelessWidget {
               Icon(Icons.bus_alert),
               Icon(Icons.directions_walk),
             ],
+            indicatorColor: Colors.deepOrange,
+            indicatorWeight: 5.0,
           ),
         ),
         body: TabBarView(
@@ -44,7 +46,10 @@ class TabBarScreen extends StatelessWidget {
             thrdTab(),
           ],
         ),
-        floatingActionButton: FloatingActionButton(onPressed: () {  }, child: const Icon(Icons.navigation),),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.navigation),
+        ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
     );
