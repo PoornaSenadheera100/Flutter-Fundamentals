@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fundamentals/screens/LoginScreen.dart';
+import 'package:flutter_fundamentals/screens/form.dart';
+import 'package:flutter_fundamentals/screens/success_screen.dart';
 
-void main(){
+void main() {
   runApp(const MyApp());
 }
 
@@ -10,9 +11,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
-    );
+      home: MyForm(),
+    );;
   }
 }
