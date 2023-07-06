@@ -1,32 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fundamentals/screens/LoginScreen.dart';
 
-void main() {
-  runApp(MyApp());
+void main(){
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  var items = List<String>.generate(100, (index) => "Task ${index + 1}");
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("List Builder App"),
-        ),
-        body: ListView.builder(
-            itemCount: items.length,
-            itemBuilder: (context, index) {
-              return ListTile(
-                leading: const Icon(Icons.task_alt),
-                title: Text(items[index]),
-                subtitle: const Text("By Test"),
-                trailing: const Icon(Icons.add_box),
-                onTap: (){},
-              );
-            }),
-      ),
+      home: LoginScreen(),
     );
   }
 }
