@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  var items = List<String>.generate(100, (index) => "Task ${index + 1}");
 
   @override
   Widget build(BuildContext context) {
@@ -13,41 +13,19 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("List View App"),
+          title: const Text("List Builder App"),
         ),
-        body: SizedBox(
-          height: 100.0,
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: [
-              Container(
-                width: 100.0,
-                height: 100.0,
-                color: Colors.deepOrange,
-              ),
-              Container(
-                width: 100.0,
-                height: 100.0,
-                color: Colors.blue,
-              ),
-              Container(
-                width: 100.0,
-                height: 100.0,
-                color: Colors.deepOrange,
-              ),
-              Container(
-                width: 100.0,
-                height: 100.0,
-                color: Colors.blue,
-              ),
-              Container(
-                width: 100.0,
-                height: 100.0,
-                color: Colors.deepOrange,
-              ),
-            ],
-          ),
-        ),
+        body: ListView.builder(
+            itemCount: items.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                leading: const Icon(Icons.task_alt),
+                title: Text(items[index]),
+                subtitle: const Text("By Test"),
+                trailing: const Icon(Icons.add_box),
+                onTap: (){},
+              );
+            }),
       ),
     );
   }
