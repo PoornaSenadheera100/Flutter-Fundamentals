@@ -8,36 +8,63 @@ class AsyncAppScreen2 extends StatefulWidget {
 }
 
 class _AsyncAppScreen2State extends State<AsyncAppScreen2> {
-  late String name;
-  late String age;
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _ageController = TextEditingController();
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    loadData();
+  }
+
+  void loadData() {
+    Future.delayed(const Duration(seconds: 5), () {
+      _nameController.text = "Poorna Senadheera";
+      _ageController.text = "22";
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("My Profile"),
+        title: const Text("My Profile"),
       ),
-      body: Column(
-        children: [
-          Row(
-            children: [
-              Text("Name"),
-              Flexible(child: TextField()),
-            ],
-          ),
-          Row(
-            children: [
-              Text("Age"),
-              Flexible(child: TextField()),
-            ],
-          ),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                const Text("Name :   "),
+                Flexible(
+                    child: TextField(
+                  enabled: false,
+                  controller: _nameController,
+                  decoration: const InputDecoration(
+                    hintText: "Loading...",
+                    border: InputBorder.none,
+                  ),
+                )),
+              ],
+            ),
+            Row(
+              children: [
+                const Text("Age     :   "),
+                Flexible(
+                    child: TextField(
+                  enabled: false,
+                  controller: _ageController,
+                  decoration: const InputDecoration(
+                    hintText: "Loading...",
+                    border: InputBorder.none,
+                  ),
+                )),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

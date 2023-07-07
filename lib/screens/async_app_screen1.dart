@@ -8,16 +8,16 @@ class AsyncAppScreen1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Asynchronous App"),
+        title: const Text("Asynchronous App"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text("Welcome to Async App"),
+            const Text("Welcome to Async App", style: TextStyle(fontSize: 30.0),),
             ElevatedButton(onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>AsyncAppScreen2()));
-            }, child: Text("My Profile")),
+              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>const AsyncAppScreen2()));
+            }, child: const Text("My Profile")),
           ],
         ),
       ),
