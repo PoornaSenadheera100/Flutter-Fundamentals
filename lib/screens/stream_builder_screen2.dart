@@ -19,6 +19,12 @@ class _StreamBuilderScreen2State extends State<StreamBuilderScreen2> {
     getData();
   }
 
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.close();
+  }
+
   void getData() async{
     late StreamBuilderUser user;
     await Future.delayed(const Duration(seconds: 5), (){
