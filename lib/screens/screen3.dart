@@ -1,9 +1,11 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_fundamentals/models/data_provider.dart';
+import 'package:provider/provider.dart';
 
 class Screen3 extends StatelessWidget {
-  const Screen3(this._title, this._changeData, {super.key});
-  final String _title;
-  final Function _changeData;
+  const Screen3({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,10 +13,17 @@ class Screen3 extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(_title),
-          ElevatedButton(onPressed: (){
-            _changeData("Title 2");
-          }, child: const Text("Change Data"))
+          Consumer<MyData>(
+            builder: (BuildContext context, value, Widget? child) {
+              return Text(value.title);
+            },
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Provider.of<MyData>(context, listen: false)
+                    .changeTitle(Random().nextInt(100).toString());
+              },
+              child: const Text("Change Data"))
         ],
       ),
     );
