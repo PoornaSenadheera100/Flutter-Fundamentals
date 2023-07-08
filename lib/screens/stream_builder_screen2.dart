@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_fundamentals/models/StreamBuilderUser.dart';
 
 class StreamBuilderScreen2 extends StatefulWidget {
   const StreamBuilderScreen2({super.key});
@@ -10,10 +11,7 @@ class StreamBuilderScreen2 extends StatefulWidget {
 }
 
 class _StreamBuilderScreen2State extends State<StreamBuilderScreen2> {
-  StreamController<dynamic> _controller = StreamController();
-
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _ageController = TextEditingController();
+  final StreamController<dynamic> _controller = StreamController();
 
   @override
   void initState() {
@@ -21,30 +19,31 @@ class _StreamBuilderScreen2State extends State<StreamBuilderScreen2> {
     getData();
   }
 
-  void getData(){
-    Future.delayed(Duration(seconds: 5), (){
-      _nameController.text = "Poorna Senadheera";
-      _ageController.text = "22";
+  void getData() async{
+    late StreamBuilderUser user;
+    await Future.delayed(const Duration(seconds: 5), (){
+       user = StreamBuilderUser("Poorna Senadheera", "22");
     });
+    _controller.sink.add(user);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("My Profile"),
+        title: const Text("My Profile"),
       ),
       body: StreamBuilder(
         stream: _controller.stream,
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(
+            return const Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CircularProgressIndicator.adaptive(),
                   Padding(
-                    padding: const EdgeInsets.only(top: 20.0),
+                    padding: EdgeInsets.only(top: 20.0),
                     child: Text("Loading..."),
                   ),
                 ],
@@ -57,30 +56,14 @@ class _StreamBuilderScreen2State extends State<StreamBuilderScreen2> {
                 children: [
                   Row(
                     children: [
-                      const Text("Name :   "),
-                      Flexible(
-                          child: TextField(
-                            enabled: false,
-                            controller: _nameController,
-                            decoration: const InputDecoration(
-                              hintText: "Loading...",
-                              border: InputBorder.none,
-                            ),
-                          )),
+                      const Text("Name :   ", style: TextStyle(fontSize: 20.0),),
+                      Text(snapshot.data.name, style: const TextStyle(fontSize: 20.0),),
                     ],
                   ),
                   Row(
                     children: [
-                      const Text("Age     :   "),
-                      Flexible(
-                          child: TextField(
-                            enabled: false,
-                            controller: _ageController,
-                            decoration: const InputDecoration(
-                              hintText: "Loading...",
-                              border: InputBorder.none,
-                            ),
-                          )),
+                      const Text("Age     :   ", style: TextStyle(fontSize: 20.0),),
+                      Text(snapshot.data.age, style: const TextStyle(fontSize: 20.0),),
                     ],
                   ),
                 ],
