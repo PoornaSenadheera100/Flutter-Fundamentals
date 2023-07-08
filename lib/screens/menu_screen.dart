@@ -6,6 +6,7 @@ import 'package:flutter_fundamentals/screens/flutter_forms_screen1.dart';
 import 'package:flutter_fundamentals/screens/list_builder_screen.dart';
 import 'package:flutter_fundamentals/screens/list_view_screen1.dart';
 import 'package:flutter_fundamentals/screens/stateful_widgets_screen.dart';
+import 'package:flutter_fundamentals/screens/stream_builder_screen1.dart';
 import 'package:flutter_fundamentals/screens/tab_bar_screen.dart';
 
 class MenuScreen extends StatelessWidget {
@@ -127,7 +128,7 @@ class MenuScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>FlutterFormsScreen()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>const FlutterFormsScreen()));
               },
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
@@ -139,7 +140,7 @@ class MenuScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>AsyncAppScreen1()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>const AsyncAppScreen1()));
               },
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
@@ -150,7 +151,9 @@ class MenuScreen extends StatelessWidget {
               child: const Text("Asynchronous App"),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>const StreamBuilderScreen1()));
+              },
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
                         (states) => const Size(184.0, 40.0)),

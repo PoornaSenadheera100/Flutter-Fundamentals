@@ -13,7 +13,6 @@ class _AsyncAppScreen2State extends State<AsyncAppScreen2> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     loadData();
   }
