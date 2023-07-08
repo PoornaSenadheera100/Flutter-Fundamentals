@@ -1,37 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fundamentals/models/data_provider.dart';
 import 'package:flutter_fundamentals/screens/screen1.dart';
+import 'package:provider/provider.dart';
 
-void main(){
+void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  String _title = "Title 1";
-
-  void _changeData(String newText){
-    setState(() {
-      _title = newText;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text(_title),
-        ),
-        body: Screen1(_title, _changeData),
-      ),
+      home: ChangeNotifierProvider(
+          create: (context) => MyData(),
+          builder: (BuildContext context, child) {
+            return Scaffold(
+              appBar: AppBar(
+                centerTitle: true,
+                title: Consumer<MyData>(
+                  builder: (BuildContext context, value, Widget? child) {
+                    return Text(value.title);
+                  },
+                ),
+              ),
+              body: const Screen1(),
+            );
+          }),
     );
   }
 }
