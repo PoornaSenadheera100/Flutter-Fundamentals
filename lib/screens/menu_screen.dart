@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fundamentals/screens/async_app_screen1.dart';
 import 'package:flutter_fundamentals/screens/columns_rows_screen.dart';
 import 'package:flutter_fundamentals/screens/custom_app_bar_screen.dart';
 import 'package:flutter_fundamentals/screens/flutter_forms_screen1.dart';
@@ -137,7 +138,9 @@ class MenuScreen extends StatelessWidget {
               child: const Text("Flutter Forms", style: TextStyle(color: Colors.black),),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>AsyncAppScreen1()));
+              },
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
                         (states) => const Size(184.0, 40.0)),
