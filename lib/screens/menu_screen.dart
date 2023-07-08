@@ -169,6 +169,16 @@ class MenuScreen extends StatelessWidget {
               ),
               child: const Text("Future Builder"),
             ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.resolveWith(
+                        (states) => const Size(184.0, 40.0)),
+                backgroundColor: MaterialStateProperty.resolveWith(
+                        (states) => Colors.black),
+              ),
+              child: const Text("Provider Package", style: TextStyle(color: Colors.white),),
+            ),
           ],
         ),
       ),
