@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_fundamentals/widgets/provider_widget3.dart';
 
 class ProviderWidget2 extends StatelessWidget {
-  const ProviderWidget2({super.key});
+  ProviderWidget2({super.key});
 
   @override
   Widget build(BuildContext context) {

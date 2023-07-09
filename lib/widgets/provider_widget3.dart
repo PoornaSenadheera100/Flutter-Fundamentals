@@ -18,7 +18,9 @@ class ProviderWidget3 extends StatelessWidget {
           Text(_number.toString(), style: TextStyle(color: Colors.white, fontSize: 40.0, fontWeight: FontWeight.bold),),
           Padding(
             padding: const EdgeInsets.only(bottom: 40.0),
-            child: ElevatedButton(onPressed: (){}, child: Text("Generate New Number")),
+            child: ElevatedButton(onPressed: (){
+
+            }, child: Text("Generate New Number")),
           )
         ],
       ),
