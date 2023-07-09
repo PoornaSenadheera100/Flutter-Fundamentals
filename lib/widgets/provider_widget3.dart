@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fundamentals/models/DataProvider.dart';
+import 'package:flutter_fundamentals/models/data_provider.dart';
 import 'package:provider/provider.dart';
 
 class ProviderWidget3 extends StatelessWidget {

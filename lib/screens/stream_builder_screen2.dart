@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_fundamentals/models/StreamBuilderUser.dart';
+import 'package:flutter_fundamentals/models/stream_builder_user.dart';
 
 class StreamBuilderScreen2 extends StatefulWidget {
   const StreamBuilderScreen2({super.key});

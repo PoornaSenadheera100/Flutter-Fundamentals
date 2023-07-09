@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_fundamentals/models/FutureBuilderUser.dart';
+import 'package:flutter_fundamentals/models/future_builder_user.dart';
 import 'package:flutter_fundamentals/screens/future_builder_screen3.dart';
 import 'package:http/http.dart' as http;
 

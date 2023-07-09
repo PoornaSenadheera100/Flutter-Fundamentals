@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fundamentals/models/DataProvider.dart';
+import 'package:flutter_fundamentals/models/data_provider.dart';
 import 'package:flutter_fundamentals/widgets/provider_widget1.dart';
 import 'package:provider/provider.dart';
 

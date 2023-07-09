@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fundamentals/models/FutureBuilderUser.dart';
+import 'package:flutter_fundamentals/models/future_builder_user.dart';
 
 class FutureBuilderScreen3 extends StatelessWidget {
   final FutureBuilderUser _user;
