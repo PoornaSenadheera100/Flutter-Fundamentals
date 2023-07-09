@@ -7,8 +7,8 @@ class ProviderWidget1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 270.0,
-      width: 270.0,
+      height: 530.0,
+      width: 280.0,
       color: Colors.yellow,
       child: Column(
         children: [
