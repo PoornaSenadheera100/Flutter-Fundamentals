@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fundamentals/models/FormUser.dart';
+import 'package:flutter_fundamentals/models/form_user.dart';
 
 class FlutterFormsScreen2 extends StatelessWidget {
   final FormUser _user;

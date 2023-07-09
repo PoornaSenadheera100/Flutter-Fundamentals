@@ -13,7 +13,6 @@ class _StatefulWidgetScreenState extends State<StatefulWidgetScreen> {
   void increment() {
     setState(() {
       _count++;
-      print(_count);
     });
   }
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fundamentals/models/FormUser.dart';
+import 'package:flutter_fundamentals/models/form_user.dart';
 import 'package:flutter_fundamentals/screens/flutter_forms_screen2.dart';
 
 class FlutterFormsScreen extends StatefulWidget {

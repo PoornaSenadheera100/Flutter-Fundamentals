@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ListViewScreen2 extends StatelessWidget {
-  String name;
-  String phone;
+  final String name;
+  final String phone;
 
-  ListViewScreen2(this.name, this.phone, {super.key});
+  const ListViewScreen2(this.name, this.phone, {super.key});
 
   @override
   Widget build(BuildContext context) {

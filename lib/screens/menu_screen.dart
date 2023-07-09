@@ -3,16 +3,20 @@ import 'package:flutter_fundamentals/screens/async_app_screen1.dart';
 import 'package:flutter_fundamentals/screens/columns_rows_screen.dart';
 import 'package:flutter_fundamentals/screens/custom_app_bar_screen.dart';
 import 'package:flutter_fundamentals/screens/flutter_forms_screen1.dart';
+import 'package:flutter_fundamentals/screens/future_builder_screen1.dart';
 import 'package:flutter_fundamentals/screens/list_builder_screen.dart';
 import 'package:flutter_fundamentals/screens/list_view_screen1.dart';
+import 'package:flutter_fundamentals/screens/provider_package_screen.dart';
 import 'package:flutter_fundamentals/screens/stateful_widgets_screen.dart';
+import 'package:flutter_fundamentals/screens/stream_builder_screen1.dart';
 import 'package:flutter_fundamentals/screens/tab_bar_screen.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
 
-  void onTapCustomAppBarBtn(BuildContext context){
-    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>const CustomAppBarScreen()));
+  void onTapCustomAppBarBtn(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(
+        builder: (BuildContext context) => const CustomAppBarScreen()));
   }
 
   @override
@@ -67,7 +71,8 @@ class MenuScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>const TabBarScreen()));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => const TabBarScreen()));
               },
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
@@ -79,19 +84,25 @@ class MenuScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>const ColumnsRows()));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => const ColumnsRows()));
               },
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
                     (states) => const Size(184.0, 40.0)),
-                backgroundColor: MaterialStateProperty.resolveWith(
-                    (states) => Colors.amber),
+                backgroundColor:
+                    MaterialStateProperty.resolveWith((states) => Colors.amber),
               ),
-              child: const Text("Columns & Rows", style: TextStyle(color: Colors.black),),
+              child: const Text(
+                "Columns & Rows",
+                style: TextStyle(color: Colors.black),
+              ),
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>const StatefulWidgetScreen()));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        const StatefulWidgetScreen()));
               },
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
@@ -103,19 +114,22 @@ class MenuScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>const ListViewScreen1()));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        const ListViewScreen1()));
               },
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
                     (states) => const Size(184.0, 40.0)),
-                backgroundColor: MaterialStateProperty.resolveWith(
-                    (states) => Colors.green),
+                backgroundColor:
+                    MaterialStateProperty.resolveWith((states) => Colors.green),
               ),
               child: const Text("List View"),
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=> ListBuilderScreen()));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => ListBuilderScreen()));
               },
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
@@ -127,7 +141,9 @@ class MenuScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>FlutterFormsScreen()));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        const FlutterFormsScreen()));
               },
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
@@ -135,39 +151,72 @@ class MenuScreen extends StatelessWidget {
                 backgroundColor: MaterialStateProperty.resolveWith(
                     (states) => Colors.yellowAccent),
               ),
-              child: const Text("Flutter Forms", style: TextStyle(color: Colors.black),),
+              child: const Text(
+                "Flutter Forms",
+                style: TextStyle(color: Colors.black),
+              ),
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>AsyncAppScreen1()));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        const AsyncAppScreen1()));
               },
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
-                        (states) => const Size(184.0, 40.0)),
+                    (states) => const Size(184.0, 40.0)),
                 backgroundColor: MaterialStateProperty.resolveWith(
-                        (states) => Colors.pinkAccent),
+                    (states) => Colors.pinkAccent),
               ),
               child: const Text("Asynchronous App"),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        const StreamBuilderScreen1()));
+              },
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
-                        (states) => const Size(184.0, 40.0)),
+                    (states) => const Size(184.0, 40.0)),
                 backgroundColor: MaterialStateProperty.resolveWith(
-                        (states) => Colors.lightBlueAccent),
+                    (states) => Colors.lightBlueAccent),
               ),
-              child: const Text("Stream & StreamBuilder", style: TextStyle(color: Colors.black),),
+              child: const Text(
+                "Stream & StreamBuilder",
+                style: TextStyle(color: Colors.black),
+              ),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        const FutureBuilderScreen1()));
+              },
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.resolveWith(
-                        (states) => const Size(184.0, 40.0)),
+                    (states) => const Size(184.0, 40.0)),
                 backgroundColor: MaterialStateProperty.resolveWith(
-                        (states) => Colors.deepOrangeAccent),
+                    (states) => Colors.deepOrangeAccent),
               ),
               child: const Text("Future Builder"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        const ProviderPackageScreen()));
+              },
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.resolveWith(
+                    (states) => const Size(184.0, 40.0)),
+                backgroundColor:
+                    MaterialStateProperty.resolveWith((states) => Colors.black),
+              ),
+              child: const Text(
+                "Provider Package",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ],
         ),

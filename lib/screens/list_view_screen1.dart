@@ -36,7 +36,7 @@ class ListViewScreen1 extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (BuildContext context) =>
-                          ListViewScreen2("Sanuthi Vihansa", "0714204648")));
+                          const ListViewScreen2("Sanuthi Vihansa", "0714204648")));
                 }),
             onTap: () {},
           ),
@@ -56,7 +56,7 @@ class ListViewScreen1 extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (BuildContext context) =>
-                          ListViewScreen2("Hilarina Christy", "0712345678")));
+                          const ListViewScreen2("Hilarina Christy", "0712345678")));
                 }),
             onTap: () {},
           ),
@@ -76,7 +76,7 @@ class ListViewScreen1 extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (BuildContext context) =>
-                          ListViewScreen2("Sathira Wijeratne", "0718765432")));
+                          const ListViewScreen2("Sathira Wijeratne", "0718765432")));
                 }),
             onTap: () {},
           ),
