@@ -1,8 +1,8 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_fundamentals/models/data_provider.dart';
 import 'package:provider/provider.dart';
+
+import '../models/my_data.dart';
 
 class Screen3 extends StatelessWidget {
   const Screen3({super.key});

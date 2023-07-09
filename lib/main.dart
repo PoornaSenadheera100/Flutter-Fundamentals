@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fundamentals/models/data_provider.dart';
 import 'package:flutter_fundamentals/screens/screen1.dart';
 import 'package:provider/provider.dart';
+
+import 'models/my_data.dart';
 
 void main() {
   runApp(const MyApp());
