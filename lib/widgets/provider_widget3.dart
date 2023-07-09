@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fundamentals/models/DataProvider.dart';
+import 'package:provider/provider.dart';
 
 class ProviderWidget3 extends StatelessWidget {
-  int _number = 20;
-
-  ProviderWidget3({super.key});
+  const ProviderWidget3({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +14,29 @@ class ProviderWidget3 extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text("Provider Widget 3", style: TextStyle(color: Colors.white),),
-          Text(_number.toString(), style: TextStyle(color: Colors.white, fontSize: 40.0, fontWeight: FontWeight.bold),),
+          const Text(
+            "Provider Widget 3",
+            style: TextStyle(color: Colors.white),
+          ),
+          Consumer<MyDataProvider>(
+            builder: (BuildContext context, value, Widget? child) {
+              return Text(
+                value.number.toString(),
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 40.0,
+                    fontWeight: FontWeight.bold),
+              );
+            },
+          ),
           Padding(
             padding: const EdgeInsets.only(bottom: 40.0),
-            child: ElevatedButton(onPressed: (){
-
-            }, child: Text("Generate New Number")),
+            child: ElevatedButton(
+                onPressed: () {
+                  Provider.of<MyDataProvider>(context, listen: false)
+                      .changeNum();
+                },
+                child: const Text("Generate New Number")),
           )
         ],
       ),
